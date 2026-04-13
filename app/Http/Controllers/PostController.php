@@ -63,5 +63,24 @@ class PostController extends Controller
         return (view('posts.edit', ['id' => $id, 'arr' => $arr]));
     }
 
+    public function update($id)
+    {
+        //1-access data from request
+
+        // **********  first way to access form data
+        // $request = request();       // we access all form data using request helper function
+        // @dd($request->mail);         // we can also access specific form data using request helper function and passing the name of the input field
+        // @@dd($request->password);     // we can also access specific form data using request helper function and passing the name of the input field
+        // @dd($request->all());        // we can also access specific form data using
+
+        //************  another way to access form data
+        $mail = request()->mail;
+        $password = request()->password;
+        $check_box = request()->check_box;
+        // @dd($mail, $password, $check_box);
+
+        return (to_route('posts.show', 'mail=' . $mail . '&password=' . $password . '&check_box=' . $check_box));
+    }
+
 }
 

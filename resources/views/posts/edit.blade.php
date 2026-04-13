@@ -4,8 +4,9 @@
         edit
     @endsection
 
-    <form method="POST" action="{{ route('posts.store') }}">
+    <form method="POST" action="{{ route('posts.update', $id) }}">
         @csrf
+        @method('PUT')
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" name="mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
