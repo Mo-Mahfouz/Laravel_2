@@ -24,8 +24,11 @@
                     <td><a href="{{ route('posts.show', $item['id']) }}" class="btn btn-info">info
                         </a>
                     </td>
-                    <td><button type="button" class="btn btn-danger">Delete</button></td>
-                    <td><button type="button" class="btn btn-secondary">edit</button></td>
+
+                    <td><a href="{{ route('posts.edit', $item['id']) }}" class="btn btn-info">edit
+                        </a></td>
+                    <td> <a href="" class="btn btn-info">delete
+                        </a></td>
 
                 </tr>
             @endforeach
