@@ -45,11 +45,23 @@ class PostController extends Controller
         $mail = request()->mail;
         $password = request()->password;
         $check_box = request()->check_box;
-        @dd($mail, $password, $check_box);
+        // @dd($mail, $password, $check_box);
 
+        return (to_route('posts.index', 'mail=' . $mail . '&password=' . $password . '&check_box=' . $check_box));
         //2-store data in database
         // we will study it later in the course when we talk about database
         //3-redirect to index page
     }
+
+    public function edit($id)
+    {
+        $arr = [
+            'id' => 1,
+            'first' => "Mohamed",
+            'last' => "Esawy"
+        ];
+        return (view('posts.edit', ['id' => $id, 'arr' => $arr]));
+    }
+
 }
 
