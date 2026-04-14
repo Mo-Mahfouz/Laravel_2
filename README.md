@@ -101,3 +101,17 @@ return data;
         @@dd($request->password);     // we can also access specific form data using request helper function and passing the name of the input field
         @dd($request->all());        // we can also access specific form data using
 ```
+###.env
+.env file is an important configration files that diffre from device to another -> this file exists in gitignore file.
+it won't be pushed with data pushed on github beacuse it has secret data must not be published on public repo
+so we will find .env.example will be published to download it from repo and changeing name to .env and storing important configratoins into it.
+
+to control migratoins we use
+```
+php artisan make:migration create_posts_table
+php artisan migrate
+php artisan migrate:fresh
+```
+if we open config -> database.php we will find some variables that we change it's values from .env file
+if we made it static we would lose the advantage of changing values from .env and having several values from 
+diffrent devices
