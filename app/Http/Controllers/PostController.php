@@ -82,5 +82,10 @@ class PostController extends Controller
         return (to_route('posts.show', 'mail=' . $mail . '&password=' . $password . '&check_box=' . $check_box));
     }
 
+    public function destroy($id)
+    {
+        return (to_route('posts.index', 'id=' . $id));
+    }
+
 }
 
