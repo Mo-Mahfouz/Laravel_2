@@ -7,7 +7,8 @@ C:\xampp\htdocs
 ```
 then open cmd.... then type 
 ```
-laravel new example-app
+1- laravel new example-app
+2- composer create-project laravel/laravel example-app  //most used
 ```
 Run a localHost server For your laravel project (open terminal into your project folder) using this command  
 ```
