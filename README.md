@@ -116,3 +116,5 @@ php artisan migrate:fresh
 if we open config -> database.php we will find some variables that we change it's values from .env file
 if we made it static we would lose the advantage of changing values from .env and having several values from 
 diffrent devices
+
+###Resource Controller
