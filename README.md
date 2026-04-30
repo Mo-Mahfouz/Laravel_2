@@ -117,4 +117,5 @@ if we open config -> database.php we will find some variables that we change it'
 if we made it static we would lose the advantage of changing values from .env and having several values from 
 diffrent devices
 
-###Resource Controller
+<h4>resource Controller</h4>
+except and only methods 
