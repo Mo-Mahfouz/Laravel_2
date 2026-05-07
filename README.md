@@ -7,7 +7,8 @@ C:\xampp\htdocs
 ```
 then open cmd.... then type 
 ```
-laravel new example-app
+1- laravel new example-app
+2- composer create-project laravel/laravel example-app  //most used
 ```
 Run a localHost server For your laravel project (open terminal into your project folder) using this command  
 ```
@@ -115,3 +116,6 @@ php artisan migrate:fresh
 if we open config -> database.php we will find some variables that we change it's values from .env file
 if we made it static we would lose the advantage of changing values from .env and having several values from 
 diffrent devices
+
+<h4>resource Controller</h4>
+except and only methods 
