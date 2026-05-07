@@ -8,28 +8,29 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">F_Name</th>
-                <th scope="col">L_Name</th>
-                <th scope="col">Info</th>
-                <th scope="col">Del</th>
-                <th scope="col">Edit</th>
+                <th scope="col">title</th>
+                <th scope="col">description</th>
+                <th scope="col">created_at</th>
+                <th scope="col">updated_at at</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($arr as $item)
+            @foreach ($arr as $post)
                 <tr>
-                    <th scope="row">{{$item['id']}}</th>
-                    <td>{{$item['first']}}</td>
-                    <td>{{$item['last']}}</td>
-                    <td><a href="{{ route('posts.show', $item['id']) }}" class="btn btn-info">info
+                    <th scope="row">{{$post->id}}</th>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->description}}</td>
+                    <td>{{$post->created_at}}</td>
+                    <td>{{$post->updated_at}}</td>
+                    <td><a href="{{ route('posts.show', $post['id']) }}" class="btn btn-info">info
                         </a>
                     </td>
 
-                    <td><a href="{{ route('posts.edit', $item['id']) }}" class="btn btn-info">edit
+                    <td><a href="{{ route('posts.edit', $post['id']) }}" class="btn btn-info">edit
                         </a></td>
 
                     <td>
-                        <form action="{{ route('posts.destroy', $item['id']) }}" method="POST">
+                        <form action="{{ route('posts.destroy', $post['id']) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="Delete" class="btn btn-danger">
@@ -38,7 +39,7 @@
 
                 </tr>
             @endforeach
-            <a href="{{ route('posts.create', 'create') }}" class="btn btn-info">New Item
+            <a href="{{ route('posts.create', 'create') }}" class="btn btn-info">New post
             </a>
 
 

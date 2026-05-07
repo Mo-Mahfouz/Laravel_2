@@ -3,28 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $arr = [
-            ['id' => 1, 'first' => "Mohamed", 'last' => "Esawy"],
-            ['id' => 2, 'first' => "Ahmed", 'last' => "Mahfouz"],
-            ['id' => 3, 'first' => "Esraa", 'last' => "Xo"],
-            ['id' => 4, 'first' => "Mariam", 'last' => "S"]
-        ];
-        return (view('posts.index', ['arr' => $arr]));
+        $arrFromDb = Post::all();
+        // $arrFromDb = [
+        //     ['id' => 1, 'first' => "Mohamed", 'last' => "Esawy"],
+        //     ['id' => 2, 'first' => "Ahmed", 'last' => "Mahfouz"],
+        //     ['id' => 3, 'first' => "Esraa", 'last' => "Xo"],
+        //     ['id' => 4, 'first' => "Mariam", 'last' => "S"]
+        // ];
+        return (view('posts.index', ['arr' => $arrFromDb]));
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
-        $arr = [
-            'id' => 1,
-            'first' => "Mohamed",
-            'last' => "Esawy"
-        ];
-        return (view('posts.show', ['id' => $id, 'arr' => $arr]));
+
+        return (view('posts.show', ['post' => $post]));
     }
     public function create()
     {
